@@ -1,0 +1,8 @@
+{
+  "name": "datos-personales-co",
+  "version": "1.0.0",
+  "description": "Implementa y sostiene el régimen colombiano de protección de datos: evaluación del tratamiento, política y aviso de privacidad, atención de consultas y reclamos en los términos de la Ley 1581 de 2012, gestión de incidentes de seguridad ante la SIC, transferencias y transmisiones internacionales, contratos de encargo y el régimen especial de dato financiero de la Ley 1266 de 2008.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

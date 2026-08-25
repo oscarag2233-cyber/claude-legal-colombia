@@ -1,0 +1,8 @@
+{
+  "name": "regulatorio-co",
+  "version": "1.0.0",
+  "description": "Mantiene al equipo al día con lo que se publica y con lo que decide la jurisprudencia: vigilancia del Diario Oficial, de las superintendencias y de las altas cortes, análisis de impacto de una norma nueva sobre las obligaciones vigentes, comentarios a proyectos normativos en consulta pública, mapa de obligaciones por área, y el boletín que el equipo sí lee el lunes.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "cumplimiento-co",
+  "version": "1.0.0",
+  "description": "Determina qué régimen de cumplimiento obliga a la empresa y lo implementa: SAGRILAFT y PTEE bajo la Circular Básica Jurídica de la Superintendencia de Sociedades, responsabilidad administrativa por soborno transnacional de la Ley 1778 de 2016, debida diligencia de contrapartes, canal de denuncias y reporte a autoridades. Incluye la interacción con el régimen de datos personales.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

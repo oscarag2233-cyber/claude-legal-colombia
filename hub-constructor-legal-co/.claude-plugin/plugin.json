@@ -1,0 +1,8 @@
+{
+  "name": "hub-constructor-legal-co",
+  "version": "1.0.0",
+  "description": "Encuentra, evalúa, instala y mantiene skills jurídicas de la comunidad colombiana con una compuerta de revisión de seguridad y de calidad jurídica antes de que algo entre al entorno. Incluye un creador de skills que impone las convenciones de este repositorio: verificación de fuentes, control de términos y compuertas de revisión profesional.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

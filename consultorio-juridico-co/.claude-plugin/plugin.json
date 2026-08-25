@@ -1,0 +1,8 @@
+{
+  "name": "consultorio-juridico-co",
+  "version": "1.0.0",
+  "description": "Sostiene la operación del consultorio jurídico universitario bajo la Ley 2113 de 2021: entrevista y ficha de consulta, concepto para el usuario en lenguaje claro, control de términos con criterio de prevención del daño, cola de revisión del docente antes de que salga cualquier pieza, y entrega ordenada de casos al final del semestre.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

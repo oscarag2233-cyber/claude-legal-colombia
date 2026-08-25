@@ -1,0 +1,8 @@
+{
+  "name": "insolvencia-co",
+  "version": "1.0.0",
+  "description": "Diagnostica si la empresa o la persona natural está en los supuestos de insolvencia, prepara la solicitud de reorganización o de liquidación judicial ante la Superintendencia de Sociedades bajo la Ley 1116 de 2006, revisa la calificación y graduación de créditos, negocia el acuerdo, y maneja la insolvencia de persona natural no comerciante ante centro de conciliación o notaría.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

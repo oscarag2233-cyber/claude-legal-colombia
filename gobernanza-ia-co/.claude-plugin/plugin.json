@@ -1,0 +1,8 @@
+{
+  "name": "gobernanza-ia-co",
+  "version": "1.0.0",
+  "description": "Gobierna el uso de IA en la organización y en la práctica jurídica desde el marco colombiano: inventario de sistemas, triage de casos de uso por riesgo, evaluación de impacto que cruza protección de datos y derechos fundamentales, política interna de uso de IA, revisión de contratos con proveedores de IA, y las reglas de uso de IA generativa en actuaciones judiciales.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

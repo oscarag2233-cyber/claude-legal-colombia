@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+# La configuración y los asuntos del usuario nunca entran al control de versiones
+config/
+asuntos/
+expedientes/
+bitacora-verificacion.md

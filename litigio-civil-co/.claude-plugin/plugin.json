@@ -1,0 +1,8 @@
+{
+  "name": "litigio-civil-co",
+  "version": "1.0.0",
+  "description": "Lleva el proceso bajo el Código General del Proceso de punta a punta: competencia y viabilidad, demanda que no se inadmite, contestación con excepciones bien planteadas, plan probatorio, ejecutivo, medidas cautelares, recursos y cronología del caso. Controla términos con la norma a la vista y marca toda cita que no haya sido verificada en fuente oficial.",
+  "author": {
+    "name": "Oscar Gutiérrez Saavedra"
+  }
+}

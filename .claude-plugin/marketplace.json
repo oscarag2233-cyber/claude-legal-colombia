@@ -1,0 +1,181 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-legal-colombia",
+  "description": "Agentes, skills y conectores de referencia para el ejercicio del Derecho en Colombia: civil y comercial, responsabilidad civil, familia y sucesiones, inmobiliario y propiedad horizontal, insolvencia, consumidor y competencia, datos personales, laboral y seguridad social, societario, litigio civil, contencioso administrativo y contratación estatal, cumplimiento, tributario, propiedad intelectual, regulatorio, gobernanza de IA, y la formación jurídica (estudiantes y consultorios). Construido sobre normativa y jurisprudencia colombianas, con verificación obligatoria de fuentes.",
+  "owner": {
+    "name": "Oscar Gutiérrez Saavedra"
+  },
+  "plugins": [
+    {
+      "name": "consultorio-juridico-co",
+      "displayName": "Consultorio Jurídico",
+      "source": "./consultorio-juridico-co",
+      "description": "Sostiene la operación del consultorio jurídico universitario bajo la Ley 2113 de 2021: entrevista y ficha de consulta, concepto para el usuario en lenguaje claro, control de términos con criterio de prevención del daño, cola de revisión del docente antes de que salga cualquier pieza, y entrega ordenada de casos al final del semestre.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "consumidor-competencia-co",
+      "displayName": "Consumidor y Competencia",
+      "source": "./consumidor-competencia-co",
+      "description": "Trabaja el Estatuto del Consumidor y el régimen de competencia ante la SIC: garantía legal y calidad e idoneidad, demandas de protección al consumidor, publicidad engañosa y cláusulas abusivas, prácticas comerciales restrictivas y actos de competencia desleal, con la lógica de la actuación administrativa y de la jurisdiccional de la Superintendencia.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "contencioso-administrativo-co",
+      "displayName": "Contencioso Administrativo y Contratación Estatal",
+      "source": "./contencioso-administrativo-co",
+      "description": "Trabaja frente al Estado bajo el CPACA: escoge el medio de control y controla la caducidad, agota vía gubernativa y conciliación prejudicial, arma nulidad y restablecimiento y reparación directa, redacta derechos de petición que obligan, sustenta apelaciones ante tribunal y Consejo de Estado, y maneja el ciclo de la contratación estatal bajo la Ley 80, la Ley 1150 y el Decreto 1082.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "contratos-comercial-co",
+      "displayName": "Contratos y Derecho Comercial",
+      "source": "./contratos-comercial-co",
+      "description": "Revisa y redacta contratos civiles y mercantiles bajo el Código Civil y el Código de Comercio: califica el tipo contractual, contrasta el clausulado contra los criterios de la casa, marca cláusulas abusivas y de riesgo, analiza incumplimiento y remedios, y traduce la revisión a un resumen que el cliente o el área de negocio sí lee.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "cumplimiento-co",
+      "displayName": "Cumplimiento — SAGRILAFT, PTEE y Antisoborno",
+      "source": "./cumplimiento-co",
+      "description": "Determina qué régimen de cumplimiento obliga a la empresa y lo implementa: SAGRILAFT y PTEE bajo la Circular Básica Jurídica de la Superintendencia de Sociedades, responsabilidad administrativa por soborno transnacional de la Ley 1778 de 2016, debida diligencia de contrapartes, canal de denuncias y reporte a autoridades. Incluye la interacción con el régimen de datos personales.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "datos-personales-co",
+      "displayName": "Datos Personales y Habeas Data",
+      "source": "./datos-personales-co",
+      "description": "Implementa y sostiene el régimen colombiano de protección de datos: evaluación del tratamiento, política y aviso de privacidad, atención de consultas y reclamos en los términos de la Ley 1581 de 2012, gestión de incidentes de seguridad ante la SIC, transferencias y transmisiones internacionales, contratos de encargo y el régimen especial de dato financiero de la Ley 1266 de 2008.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "estudiante-derecho-co",
+      "displayName": "Estudiante de Derecho",
+      "source": "./estudiante-derecho-co",
+      "description": "Acompaña el estudio del Derecho colombiano sin hacer la tarea: ficha sentencias separando ratio de obiter, interroga con método socrático, enseña a construir líneas jurisprudenciales, prepara exámenes y preparatorios por materia, y corrige escritura jurídica exigiendo estructura y cita correcta.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "familia-sucesiones-co",
+      "displayName": "Familia y Sucesiones",
+      "source": "./familia-sucesiones-co",
+      "description": "Trabaja los asuntos de familia y sucesorios con el cuidado que exigen: alimentos, custodia y visitas bajo el interés superior del menor, divorcio y liquidación de la sociedad conyugal o patrimonial, unión marital de hecho, y sucesiones notariales y judiciales. Incorpora las rutas de protección frente a violencia intrafamiliar y las reglas de capacidad de la Ley 1996 de 2019.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "gobernanza-ia-co",
+      "displayName": "Gobernanza de Inteligencia Artificial",
+      "source": "./gobernanza-ia-co",
+      "description": "Gobierna el uso de IA en la organización y en la práctica jurídica desde el marco colombiano: inventario de sistemas, triage de casos de uso por riesgo, evaluación de impacto que cruza protección de datos y derechos fundamentales, política interna de uso de IA, revisión de contratos con proveedores de IA, y las reglas de uso de IA generativa en actuaciones judiciales.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "hub-constructor-legal-co",
+      "displayName": "Hub de Constructores Legales",
+      "source": "./hub-constructor-legal-co",
+      "description": "Encuentra, evalúa, instala y mantiene skills jurídicas de la comunidad colombiana con una compuerta de revisión de seguridad y de calidad jurídica antes de que algo entre al entorno. Incluye un creador de skills que impone las convenciones de este repositorio: verificación de fuentes, control de términos y compuertas de revisión profesional.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "inmobiliario-ph-co",
+      "displayName": "Inmobiliario y Propiedad Horizontal",
+      "source": "./inmobiliario-ph-co",
+      "description": "Cubre la vida del inmueble: estudio de títulos con lectura de folio de matrícula, contratos de compraventa y arrendamiento urbano bajo la Ley 820 de 2003, restitución de inmueble arrendado, y la operación de la propiedad horizontal bajo la Ley 675 de 2001 — asambleas, reglamento, cuotas, sanciones y conflictos entre copropietarios.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "insolvencia-co",
+      "displayName": "Insolvencia y Reorganización",
+      "source": "./insolvencia-co",
+      "description": "Diagnostica si la empresa o la persona natural está en los supuestos de insolvencia, prepara la solicitud de reorganización o de liquidación judicial ante la Superintendencia de Sociedades bajo la Ley 1116 de 2006, revisa la calificación y graduación de créditos, negocia el acuerdo, y maneja la insolvencia de persona natural no comerciante ante centro de conciliación o notaría.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "laboral-seguridad-social-co",
+      "displayName": "Laboral y Seguridad Social",
+      "source": "./laboral-seguridad-social-co",
+      "description": "Resuelve el día a día laboral bajo el CST y la reforma de 2025: liquidación de prestaciones e indemnizaciones, terminación con y sin justa causa, procedimiento disciplinario con debido proceso, tipo de vinculación y riesgo de tercerización, acoso laboral bajo la Ley 1010 de 2006, riesgos laborales y accidentes de trabajo, y las rutas de pensión y seguridad social.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "litigio-civil-co",
+      "displayName": "Litigio Civil y Comercial",
+      "source": "./litigio-civil-co",
+      "description": "Lleva el proceso bajo el Código General del Proceso de punta a punta: competencia y viabilidad, demanda que no se inadmite, contestación con excepciones bien planteadas, plan probatorio, ejecutivo, medidas cautelares, recursos y cronología del caso. Controla términos con la norma a la vista y marca toda cita que no haya sido verificada en fuente oficial.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "propiedad-intelectual-co",
+      "displayName": "Propiedad Intelectual",
+      "source": "./propiedad-intelectual-co",
+      "description": "Gestiona la propiedad intelectual bajo el régimen andino y la ley colombiana: viabilidad y registro de marca ante la SIC con análisis de confundibilidad, oposiciones y cancelaciones, derecho de autor y registro de software ante la DNDA, contratos de licencia y cesión, acciones por infracción y competencia desleal, y control de vencimientos de la cartera.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "regulatorio-co",
+      "displayName": "Regulatorio y Vigilancia Normativa",
+      "source": "./regulatorio-co",
+      "description": "Mantiene al equipo al día con lo que se publica y con lo que decide la jurisprudencia: vigilancia del Diario Oficial, de las superintendencias y de las altas cortes, análisis de impacto de una norma nueva sobre las obligaciones vigentes, comentarios a proyectos normativos en consulta pública, mapa de obligaciones por área, y el boletín que el equipo sí lee el lunes.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "responsabilidad-civil-co",
+      "displayName": "Responsabilidad Civil y Seguros",
+      "source": "./responsabilidad-civil-co",
+      "description": "Analiza responsabilidad civil contractual y extracontractual bajo el Código Civil y la jurisprudencia de la Sala Civil: identifica el régimen aplicable, prueba los elementos, liquida perjuicios materiales e inmateriales con las fórmulas usadas por los jueces colombianos, gestiona la reclamación al asegurador y evalúa la viabilidad del litigio antes de demandar.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "societario-co",
+      "displayName": "Societario",
+      "source": "./societario-co",
+      "description": "Acompaña la vida de la sociedad: elección de tipo societario y constitución de SAS, convocatoria y desarrollo de asambleas con actas que resistan impugnación, reformas estatutarias, deberes y responsabilidad de administradores bajo la Ley 222 de 1995, conflictos societarios ante la Superintendencia de Sociedades, y debida diligencia societaria para transacciones.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    },
+    {
+      "name": "tributario-co",
+      "displayName": "Tributario",
+      "source": "./tributario-co",
+      "description": "Trabaja el procedimiento y el riesgo tributario bajo el Estatuto Tributario: revisión de declaraciones y correcciones, respuesta a requerimientos especiales y pliegos, recurso de reconsideración, procedimiento administrativo de cobro coactivo, obligaciones formales y facturación electrónica, y análisis de riesgo de posiciones fiscales antes de tomarlas.",
+      "author": {
+        "name": "Oscar Gutiérrez Saavedra"
+      }
+    }
+  ]
+}

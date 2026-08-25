@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Buscar, leer y traer documentos de Google Drive."
+    },
+    "Box": {
+      "type": "http",
+      "url": "https://mcp.box.com/mcp",
+      "title": "Box",
+      "description": "Acceso gobernado a documentos almacenados en Box."
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Buscar mensajes y canales del espacio de trabajo."
+    },
+    "DocuSign": {
+      "type": "http",
+      "url": "https://mcp.docusign.com/mcp",
+      "title": "DocuSign",
+      "description": "Búsqueda de acuerdos, estado de firma y flujos de suscripción."
+    }
+  },
+  "recommendedCategories": [
+    "documents",
+    "legal-document-management",
+    "case-management",
+    "project-management",
+    "e-signature"
+  ]
+}

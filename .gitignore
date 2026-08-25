@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+# Nunca versionar configuración de usuario ni material de expedientes
+config/
+expedientes/
+asuntos/
+*.local.md

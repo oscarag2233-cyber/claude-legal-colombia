@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Buscar, leer y traer documentos de Google Drive."
+    },
+    "Box": {
+      "type": "http",
+      "url": "https://mcp.box.com/mcp",
+      "title": "Box",
+      "description": "Acceso gobernado a documentos almacenados en Box."
+    }
+  },
+  "recommendedCategories": [
+    "documents",
+    "legal-document-management",
+    "case-management",
+    "project-management"
+  ]
+}

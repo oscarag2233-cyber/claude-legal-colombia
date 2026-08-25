@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Buscar, leer y traer documentos de Google Drive."
+    },
+    "Box": {
+      "type": "http",
+      "url": "https://mcp.box.com/mcp",
+      "title": "Box",
+      "description": "Acceso gobernado a documentos almacenados en Box."
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Buscar mensajes y canales del espacio de trabajo."
+    },
+    "Atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/sse",
+      "title": "Atlassian",
+      "description": "Jira y Confluence: seguimiento de tareas y base de conocimiento."
+    }
+  },
+  "recommendedCategories": [
+    "documents",
+    "legal-document-management",
+    "regulatory-intelligence",
+    "case-management",
+    "project-management"
+  ]
+}

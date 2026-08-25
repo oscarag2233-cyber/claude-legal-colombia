@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Buscar, leer y traer documentos de Google Drive."
+    },
+    "Box": {
+      "type": "http",
+      "url": "https://mcp.box.com/mcp",
+      "title": "Box",
+      "description": "Acceso gobernado a documentos almacenados en Box."
+    },
+    "DocuSign": {
+      "type": "http",
+      "url": "https://mcp.docusign.com/mcp",
+      "title": "DocuSign",
+      "description": "Búsqueda de acuerdos, estado de firma y flujos de suscripción."
+    },
+    "iManage": {
+      "type": "http",
+      "url": "https://cloudimanage.com/mcp/work",
+      "title": "iManage",
+      "description": "Contenido gobernado de iManage: los documentos permanecen en iManage."
+    }
+  },
+  "recommendedCategories": [
+    "documents",
+    "legal-document-management",
+    "board-governance",
+    "e-signature",
+    "contract-management",
+    "contract-review"
+  ]
+}
