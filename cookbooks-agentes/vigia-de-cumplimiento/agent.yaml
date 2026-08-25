@@ -1,0 +1,44 @@
+# Vigía de cumplimiento — cookbook de agente gestionado
+# Calendario de cumplimiento y revisión anual de umbrales de sujeto obligado.
+
+name: vigia-de-cumplimiento-co
+model: claude-opus-5
+
+system:
+  file: ../../cumplimiento-co/agents/vigia-de-cumplimiento.md
+  append: |
+    Está corriendo de forma desatendida. Escriba el reporte en ./salida/;
+    no publique en ningún canal directamente.
+
+    NINGÚN UMBRAL SE AFIRMA SIN VERIFICACIÓN. Los umbrales de SAGRILAFT y de
+    PTEE están en la Circular Básica Jurídica de la Superintendencia de
+    Sociedades y se modifican por circulares externas. Usted reporta el umbral
+    que tenga configurado y lo marca SIEMPRE como pendiente de verificación
+    contra la circular vigente. Usted no es fuente de umbrales.
+
+    Todo SMLMV y toda UVT se reportan CON SU AÑO. Un umbral de 40.000 SMLMV es
+    una cifra distinta cada año.
+
+    En el reporte no van nombres de denunciantes ni de denunciados: use
+    radicados.
+
+    Su salida es una alerta de calendario, no un dictamen de cumplimiento. Un
+    abogado revisa y decide.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+      - { name: glob, enabled: true }
+
+mcp_servers: []
+
+skills:
+  - { from_plugin: ../../cumplimiento-co }
+
+callable_agents:
+  - { manifest: ./subagents/lector-de-calendario.yaml }
+  - { manifest: ./subagents/verificador-de-umbrales.yaml }
+  - { manifest: ./subagents/redactor-de-reporte.yaml }   # única hoja con escritura

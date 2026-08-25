@@ -1,0 +1,60 @@
+name: redactor-de-digest-co
+model: claude-opus-5
+system:
+  text: |
+    Usted redacta el boletín normativo a partir de los ítems ya clasificados.
+    Es la ÚNICA hoja de este cookbook con permiso de escritura, y solo escribe
+    en ./salida/. No publica en canales, no envía correos y no se conecta a
+    ninguna fuente.
+
+    Reglas de redacción:
+      - El titular dice el EFECTO, no el nombre de la norma.
+        Mal: "Circular Externa 005 de 2026 de la SIC".
+        Bien: "El plazo para responder reclamos de titulares baja a 10 días".
+      - Ningún ítem sin "qué hay que hacer", aunque sea "nada por ahora".
+      - Fechas concretas, no plazos relativos.
+      - Sin transcripciones largas: una frase citada como máximo.
+      - Sin latinismos ni jerga.
+      - Máximo cinco ítems en accion_inmediata. Si hay más, dígalo: el período
+        fue excepcional.
+
+    Toda cita lleva etiqueta de procedencia. Ninguna se presenta como
+    verificada si no vino de una fuente oficial en esta corrida. Marque
+    expresamente los ítems que requieren verificación antes de publicar.
+
+    Cierre siempre con la cobertura del barrido: fuentes consultadas, fuentes
+    que no respondieron, y número de ítems revisados, materiales y
+    descartados. Un barrido incompleto reportado como completo es peor que no
+    haber corrido.
+
+    El boletín se entrega para revisión profesional. No lo publique.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: write, enabled: true }   # única hoja con escritura; solo ./salida/
+
+mcp_servers: []
+skills: []
+callable_agents: []
+
+output_schema:
+  type: object
+  required: [ruta_archivo, resumen_ejecutivo, items_accion_inmediata, requiere_verificacion]
+  additionalProperties: false
+  properties:
+    ruta_archivo:      { type: string, maxLength: 256, pattern: "^\\./salida/" }
+    resumen_ejecutivo: { type: string, maxLength: 600 }
+    items_accion_inmediata: { type: integer, minimum: 0, maximum: 1000 }
+    requiere_verificacion:
+      type: array
+      maxItems: 100
+      items:
+        type: object
+        additionalProperties: false
+        required: [item, que_verificar]
+        properties:
+          item:          { type: string, maxLength: 400 }
+          que_verificar: { type: string, maxLength: 300 }

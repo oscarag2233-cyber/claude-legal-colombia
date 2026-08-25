@@ -43,9 +43,10 @@ que inventa con seguridad.
 ```bash
 python3 scripts/generar-comunes.py
 python3 scripts/validar.py
+python3 scripts/verificar-alcance.py
 ```
 
-El validador debe salir con 0 errores.
+Los dos verificadores deben salir con 0 errores.
 
 ## Estructura de una skill nueva
 

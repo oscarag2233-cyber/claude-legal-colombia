@@ -1,0 +1,7 @@
+[
+  { "event": "Barrido semanal con corte al 2026-05-12, umbral de materialidad: medio", "description": "Corrida programada del boletín semanal" },
+  { "event": "Barrido dirigido: circulares de la Superintendencia de Sociedades sobre SAGRILAFT publicadas en los últimos 90 días", "description": "Consulta puntual sobre una materia conocida" },
+  { "event": "Revisar comunicados de prensa de la Corte Constitucional de la última semana en materia de habeas data", "description": "Vigilancia jurisprudencial acotada" },
+  { "event": "Proyectos en consulta pública con cierre en los próximos 10 días", "description": "Ventana de participación regulatoria" },
+  { "event": "Barrido de cierre de año: resoluciones de UVT y decreto de salario mínimo", "description": "Actualización de valores anuales" }
+]

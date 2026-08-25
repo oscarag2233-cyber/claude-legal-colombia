@@ -1,0 +1,7 @@
+[
+  { "event": "Revisión mensual del calendario de cumplimiento con corte al 2026-05-01", "description": "Corrida programada mensual" },
+  { "event": "Revisión anual de umbrales con corte a 2025-12-31 y SMLMV del año 2026", "description": "Barrido de enero: reevaluación de sujeto obligado" },
+  { "event": "Verificar estado de los componentes del SAGRILAFT antes de la visita de la Superintendencia", "description": "Preparación de visita de supervisión" },
+  { "event": "Contrapartes de alto riesgo con revisión periódica vencida", "description": "Control de debida diligencia continua" },
+  { "event": "Seguimientos post-denuncia pendientes en los hitos de 3, 6 y 12 meses", "description": "Verificación de ausencia de represalias" }
+]

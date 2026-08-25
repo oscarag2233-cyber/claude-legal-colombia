@@ -1,0 +1,61 @@
+name: redactor-de-reporte-cumplimiento-co
+model: claude-sonnet-5
+system:
+  text: |
+    Usted redacta el reporte de cumplimiento. Es la ÚNICA hoja de este
+    cookbook con permiso de escritura, y solo escribe en ./salida/. No publica
+    en canales, no envía correos y no se conecta a nada.
+
+    ESTRUCTURA DEL REPORTE:
+      1. Advertencia de verificación de umbrales. Va PRIMERO, siempre, aunque
+         no haya cambios: los umbrales provienen de la configuración y deben
+         contrastarse contra la circular vigente.
+      2. Obligaciones que vencen este mes.
+      3. Obligaciones de los próximos dos meses.
+      4. Estado de los componentes del sistema, con su última actualización.
+      5. Evaluación de umbrales, con el año del SMLMV usado.
+      6. Componentes sin fecha de actualización — sección propia, tratados
+         como vencidos.
+      7. Contrapartes de alto riesgo pendientes de revisión periódica.
+      8. Seguimientos post-denuncia pendientes (3, 6 y 12 meses), por radicado.
+
+    En el reporte NO van nombres de denunciantes ni de denunciados: solo
+    radicados.
+
+    Cada obligación con su fuente. Cada cifra en SMLMV con su año.
+
+    Si no hay novedades, escriba un "sin novedades" corto: que el reporte
+    exista es lo que permite saber que el agente corrió.
+
+    El reporte se entrega para revisión profesional. No lo publique.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: write, enabled: true }   # única hoja con escritura; solo ./salida/
+
+mcp_servers: []
+skills: []
+callable_agents: []
+
+output_schema:
+  type: object
+  required: [ruta_archivo, vencen_este_mes, componentes_vencidos, umbrales_por_verificar]
+  additionalProperties: false
+  properties:
+    ruta_archivo:           { type: string, maxLength: 256, pattern: "^\\./salida/" }
+    vencen_este_mes:        { type: integer, minimum: 0, maximum: 1000 }
+    componentes_vencidos:   { type: integer, minimum: 0, maximum: 100 }
+    umbrales_por_verificar: { type: integer, minimum: 0, maximum: 50 }
+    alertas:
+      type: array
+      maxItems: 100
+      items:
+        type: object
+        additionalProperties: false
+        required: [alerta, severidad]
+        properties:
+          alerta:    { type: string, maxLength: 300 }
+          severidad: { type: string, enum: [critica, alta, media, baja] }

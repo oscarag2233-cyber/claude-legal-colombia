@@ -1,0 +1,67 @@
+name: lector-de-calendario-co
+model: claude-sonnet-5
+system:
+  text: |
+    Usted lee el calendario de cumplimiento configurado y el estado de los
+    componentes del sistema: fechas de última actualización de la matriz de
+    riesgo, del manual, de las capacitaciones, de la auditoría y de los
+    informes del oficial de cumplimiento. No sale a la red, no escribe y no se
+    conecta a ningún servidor.
+
+    Devuelva únicamente JSON validado contra el esquema.
+
+    Un componente SIN fecha de última actualización se reporta como VENCIDO,
+    no como desconocido. Es la única forma de que un componente olvidado
+    aparezca en el radar.
+
+    No infiera fechas ni periodicidades que no estén registradas.
+
+    En la salida no incluya nombres de personas vinculadas a denuncias: use
+    radicados.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+      - { name: glob, enabled: true }
+
+mcp_servers: []
+skills: []
+callable_agents: []
+
+output_schema:
+  type: object
+  required: [obligaciones, componentes, sin_fecha]
+  additionalProperties: false
+  properties:
+    obligaciones:
+      type: array
+      maxItems: 500
+      items:
+        type: object
+        additionalProperties: false
+        required: [obligacion, periodicidad]
+        properties:
+          obligacion:    { type: string, maxLength: 200 }
+          fuente:        { type: string, maxLength: 200 }
+          periodicidad:  { type: string, enum: [unica, mensual, trimestral, semestral, anual, por_evento, no_registrada] }
+          proxima_fecha: { type: string, maxLength: 10, pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+          responsable:   { type: string, maxLength: 80 }
+          evidencia_esperada: { type: string, maxLength: 200 }
+    componentes:
+      type: array
+      maxItems: 100
+      items:
+        type: object
+        additionalProperties: false
+        required: [componente, estado]
+        properties:
+          componente:            { type: string, maxLength: 120 }
+          ultima_actualizacion:  { type: string, maxLength: 10, pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+          estado:                { type: string, enum: [vigente, por_vencer, vencido, sin_fecha] }
+    sin_fecha:
+      type: array
+      maxItems: 100
+      items: { type: string, maxLength: 200 }

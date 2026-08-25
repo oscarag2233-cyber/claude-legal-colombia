@@ -92,7 +92,7 @@ Se recorren todas, con esta rejilla por cada una:
    `/propiedad-intelectual-co:contratos-de-pi`.
 10. **Protección de datos** — si hay tratamiento por cuenta ajena, se necesita cláusula
     o contrato de transmisión (Decreto 1074 de 2015, art. 2.2.2.25.5.2) `[verificar]`.
-    Remitir a `/datos-personales-co:contrato-de-encargo` `[si existe]`.
+    Remitir a `/datos-personales-co:evaluacion-de-tratamiento`.
 11. **Cesión y subcontratación.**
 12. **Fuerza mayor** — definición, efectos, deber de mitigar (CC art. 64, mod. Ley 95 de
     1890).

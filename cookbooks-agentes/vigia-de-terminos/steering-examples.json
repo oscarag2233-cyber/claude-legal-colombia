@@ -1,0 +1,7 @@
+[
+  { "event": "Revisión diaria de términos con corte al 2026-05-12", "description": "Corrida programada diaria" },
+  { "event": "Revisión con calendario judicial del Acuerdo PCSJA26-XXXXX cargado", "description": "Corrida con calendario judicial verificado" },
+  { "event": "Revisar solo los asuntos del área laboral con término en los próximos 10 días hábiles", "description": "Consulta acotada por área" },
+  { "event": "Barrido de asuntos sin términos registrados", "description": "Control de completitud del tablero" },
+  { "event": "Revisión previa a vacancia judicial: términos que caen en el receso", "description": "Corrida especial antes de la vacancia" }
+]

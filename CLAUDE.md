@@ -56,8 +56,9 @@ toca.
 ## Validación antes de abrir un PR
 
 ```bash
-python3 scripts/generar-comunes.py     # 1. regenerar
+python3 scripts/generar-comunes.py     # 1. regenerar el andamiaje
 python3 scripts/validar.py             # 2. validar (debe salir 0 errores)
+python3 scripts/verificar-alcance.py   # 3. alcance de los cookbooks (0 errores)
 ```
 
 El validador comprueba:
@@ -73,6 +74,21 @@ El validador comprueba:
 - **Referencias de skill en prosa:** toda mención `/plugin:skill` debe apuntar a una
   skill que exista. Este chequeo es el que impide anunciar comandos muertos.
 - **JSON parseable**, salto de línea final, sin espacios al final de línea.
+
+## Cookbooks de agentes
+
+Cada `cookbooks-agentes/<nombre>/` tiene `agent.yaml` (orquestador),
+`subagents/*.yaml` (hojas), `steering-examples.json` y `README.md`. Dos reglas que
+`scripts/verificar-alcance.py` hace cumplir:
+
+1. **El orquestador solo tiene herramientas locales de lectura** (`read`, `grep`, `glob`).
+   La red y los MCP viven en hojas específicas; la escritura, en **una sola** hoja.
+2. **El README de cada cookbook debe declarar lo que el YAML concede.** No prometer menos
+   herramientas de las que el manifiesto habilita.
+
+Y una tercera, que no es automatizable pero es la que importa: **toda hoja con `web_fetch`
+lee contenido no confiable.** Su prompt debe decirlo, su `allowed_hosts` debe ser corta, y
+el resultado nunca puede ser una acción: solo datos estructurados.
 
 ## Convenciones de contenido jurídico
 

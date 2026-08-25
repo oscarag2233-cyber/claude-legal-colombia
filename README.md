@@ -125,19 +125,34 @@ El material que usan todos los plugins vive en [`referencias/`](referencias/):
 
 ## Cookbooks de agentes
 
-[`cookbooks-agentes/`](cookbooks-agentes/) trae recetas de agentes programados —vigía
-de términos, vigía normativo, vigía de renovaciones— con su orquestador, sus subagentes
-y el alcance de herramientas de cada uno.
+[`cookbooks-agentes/`](cookbooks-agentes/) trae recetas de agentes programados que corren
+desatendidos, con su orquestador, sus subagentes y el alcance de herramientas de cada uno.
+
+| Cookbook | Qué hace |
+|---|---|
+| [`vigia-normativo`](cookbooks-agentes/vigia-normativo/) | Barre fuentes oficiales colombianas, filtra por materialidad y prepara el boletín |
+| [`vigia-de-terminos`](cookbooks-agentes/vigia-de-terminos/) | Recalcula términos con la norma a la vista y avisa lo que vence |
+| [`vigia-de-cumplimiento`](cookbooks-agentes/vigia-de-cumplimiento/) | Vigila el calendario de cumplimiento y la reevaluación anual de umbrales |
+
+**La regla de alcance:** el orquestador solo tiene lectura local; la red vive en una hoja
+con lista blanca de dominios oficiales, y la escritura en una sola hoja. Un agente que lee
+fuentes externas está leyendo contenido no confiable, y no puede además salir a la red y
+escribir sin control.
 
 ## Validación
 
 ```bash
-python3 scripts/validar.py
+python3 scripts/validar.py            # manifiesto, frontmatter y referencias de skills
+python3 scripts/verificar-alcance.py  # alcance de herramientas de los cookbooks
 ```
 
-Comprueba las invariantes del manifiesto, el frontmatter de skills y agentes, la
-coherencia entre `marketplace.json` y cada `plugin.json`, y que toda referencia
+`validar.py` comprueba las invariantes del manifiesto, el frontmatter de skills y agentes,
+la coherencia entre `marketplace.json` y cada `plugin.json`, y que toda referencia
 `/plugin:skill` que aparezca en prosa apunte a una skill que exista.
+
+`verificar-alcance.py` comprueba que ningún orquestador de cookbook tenga escritura, red
+ni MCP; que toda hoja con `web_fetch` declare lista blanca de dominios; y que el README de
+cada cookbook declare lo que el YAML efectivamente concede.
 
 Para regenerar el andamiaje común después de tocar el registro:
 

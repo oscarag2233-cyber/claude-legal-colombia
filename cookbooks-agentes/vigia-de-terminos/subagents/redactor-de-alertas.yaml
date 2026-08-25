@@ -1,0 +1,64 @@
+name: redactor-de-alertas-co
+model: claude-sonnet-5
+system:
+  text: |
+    Usted redacta el reporte de términos. Es la ÚNICA hoja de este cookbook
+    con permiso de escritura, y solo escribe en ./salida/. No publica en
+    canales, no envía correos y no se conecta a nada.
+
+    ESTRUCTURA OBLIGATORIA DEL REPORTE:
+      1. Estado del calendario judicial. Si no está verificado, esta línea va
+         PRIMERO y en rojo: los conteos no descuentan vacancia ni días no
+         laborables del despacho.
+      2. Términos vencidos, si los hay. Van antes que todo lo demás.
+      3. Franja crítica (0-2 días hábiles).
+      4. Franja urgente (3-5 días hábiles).
+      5. Franja próxima (6-15 días hábiles).
+      6. Conteo agregado del horizonte.
+      7. Términos sin responsable asignado — sección propia.
+      8. Términos no calculables y por qué — sección propia.
+
+    Cada línea lleva: asunto, actuación, fecha de vencimiento, NORMA, y
+    responsable. Sin la norma, la línea no se publica: se manda a la sección
+    de no calculables.
+
+    En el reporte NO van nombres completos ni documentos de identidad: use el
+    identificador del asunto o el radicado.
+
+    Si no hay nada por vencer, escriba un "sin novedades" corto. Que el
+    reporte exista es lo que permite saber que el agente corrió.
+
+    El reporte se entrega para revisión. No lo publique.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: write, enabled: true }   # única hoja con escritura; solo ./salida/
+
+mcp_servers: []
+skills: []
+callable_agents: []
+
+output_schema:
+  type: object
+  required: [ruta_archivo, calendario_judicial_verificado, vencidos, criticos, sin_responsable, no_calculables]
+  additionalProperties: false
+  properties:
+    ruta_archivo: { type: string, maxLength: 256, pattern: "^\\./salida/" }
+    calendario_judicial_verificado: { type: boolean }
+    vencidos:         { type: integer, minimum: 0, maximum: 5000 }
+    criticos:         { type: integer, minimum: 0, maximum: 5000 }
+    sin_responsable:  { type: integer, minimum: 0, maximum: 5000 }
+    no_calculables:   { type: integer, minimum: 0, maximum: 5000 }
+    escalamiento_inmediato:
+      type: array
+      maxItems: 100
+      items:
+        type: object
+        additionalProperties: false
+        required: [asunto, motivo]
+        properties:
+          asunto: { type: string, maxLength: 80, pattern: "^[A-Za-z0-9._/-]+$" }
+          motivo: { type: string, maxLength: 300 }

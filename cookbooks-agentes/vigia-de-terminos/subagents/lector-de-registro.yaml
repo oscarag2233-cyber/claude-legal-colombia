@@ -1,0 +1,64 @@
+name: lector-de-registro-co
+model: claude-sonnet-5
+system:
+  text: |
+    Usted lee el registro local de asuntos y de términos: los archivos
+    `asuntos/*/terminos.md` y el tablero configurado. No sale a la red, no
+    escribe y no se conecta a ningún servidor.
+
+    Devuelva únicamente JSON validado contra el esquema. Sin texto libre.
+
+    Registre cada término tal como está: si le falta la norma, la fecha de
+    inicio o el responsable, márquelo como faltante. NO INFIERA datos que no
+    estén. Un término con fecha de inicio inventada es peor que un término
+    marcado como incompleto.
+
+    En la salida no incluya nombres completos ni documentos de identidad de
+    las partes: use el identificador del asunto y, si hace falta, iniciales.
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+      - { name: glob, enabled: true }
+
+mcp_servers: []
+skills: []
+callable_agents: []
+
+output_schema:
+  type: object
+  required: [asuntos_revisados, terminos, incompletos]
+  additionalProperties: false
+  properties:
+    asuntos_revisados: { type: integer, minimum: 0, maximum: 5000 }
+    terminos:
+      type: array
+      maxItems: 2000
+      items:
+        type: object
+        additionalProperties: false
+        required: [asunto, actuacion]
+        properties:
+          asunto:        { type: string, maxLength: 80,  pattern: "^[A-Za-z0-9._/-]+$" }
+          radicado:      { type: string, maxLength: 80,  pattern: "^[A-Za-z0-9 ._/-]+$" }
+          actuacion:     { type: string, maxLength: 200 }
+          norma:         { type: string, maxLength: 160 }
+          tipo_dias:     { type: string, enum: [habiles, calendario, no_registrado] }
+          hecho_inicial: { type: string, maxLength: 200 }
+          fecha_inicio:  { type: string, maxLength: 10, pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+          suspensiones:  { type: string, maxLength: 300 }
+          responsable:   { type: string, maxLength: 80 }
+          estado:        { type: string, maxLength: 80 }
+    incompletos:
+      type: array
+      maxItems: 500
+      items:
+        type: object
+        additionalProperties: false
+        required: [asunto, falta]
+        properties:
+          asunto: { type: string, maxLength: 80, pattern: "^[A-Za-z0-9._/-]+$" }
+          falta:  { type: string, maxLength: 200 }
